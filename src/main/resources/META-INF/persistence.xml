@@ -3,6 +3,8 @@
   <persistence-unit name="tugas.akhir_pws.mila_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>tugas.akhir.pws.mila.Handphone</class>
+    <class>tugas.akhir.pws.mila.DatabaseControllerJson</class>
+    <class>tugas.akhir.pws.mila.HandphoneController</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toko?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

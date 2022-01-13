@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -31,7 +32,7 @@ public class Handphone implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
+    @GeneratedValue
     @Column(name = "id")
     private Integer id;
     @Column(name = "nama")
@@ -44,10 +45,17 @@ public class Handphone implements Serializable {
     public Handphone() {
     }
 
-    public Handphone(Integer id) {
+    
+
+    public Handphone(Integer id, String nama, Integer harga, Integer stok) {
         this.id = id;
+        this.nama = nama;
+        this.harga = harga;
+        this.stok = stok;
     }
 
+    
+    
     public Integer getId() {
         return id;
     }
@@ -102,7 +110,9 @@ public class Handphone implements Serializable {
 
     @Override
     public String toString() {
-        return "tugas.akhir.pws.mila.Handphone[ id=" + id + " ]";
+//        return "tugas.akhir.pws.mila.Handphone[ id=" + id + " ]";
+          return "id = " + getId()+ "Nama = " + getNama() + "harga = " + getHarga() + "stok = " + getStok();
+                 
     }
     
 }

@@ -10,25 +10,11 @@ import java.util.List;
  *
  * @author asus
  */
-class HandphoneService {
+public interface HandphoneService {
 
-    List<Handphone> getAllHandphone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Handphone addHandphone(Handphone Handphone) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Handphone getBookById(int HandphoneId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void updateHandphone(Handphone Handphone) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void deleteHandphoneById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    List<Handphone> getAllHandphone();
+    Handphone addHandphone(Handphone handphone);
+    Handphone getHandphoneById(int handphoneId);
+    void updateHandphone(Handphone handphone);
+    void deleteHandphone(int handphoneId);
  }

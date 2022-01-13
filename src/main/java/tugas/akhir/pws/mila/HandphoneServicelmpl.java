@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
  * @author asus
  */
 @Service
-public class HandphoneServicelmpl extends HandphoneService{
-    @Autowire
+public class HandphoneServicelmpl implements HandphoneService{
+    @Autowired
     private HandphoneRepository repository;
     
     @Override
@@ -23,19 +23,19 @@ public class HandphoneServicelmpl extends HandphoneService{
         return repository.save(handphone);
     }
     
+    @Override
     public Handphone getHandphoneById(int handphoneId) {
         return repository.findById(handphoneId).get();
     }
 
     @Override
     public void updateHandphone(Handphone handphone) {
-        Handphone handphoneDB = repository.findById(handphone.getId()).orElseThrow();
         repository.save(handphone);
     }
     
     @Override
 
-    public void deleteHandphoneById(int handphoneId) {
+    public void deleteHandphone(int handphoneId) {
         try{
             repository.deleteById(handphoneId);
         }
@@ -44,7 +44,11 @@ public class HandphoneServicelmpl extends HandphoneService{
         }
     }
     
-    public List<Handphone> getAllHandphoneook() {
+
+
+    @Override
+    public List<Handphone> getAllHandphone() {
+     
         return repository.findAll();
-    }   
+    }
 }
